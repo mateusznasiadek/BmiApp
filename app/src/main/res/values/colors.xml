@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="black">#000000</color>
+    <color name="very_sev_underweight">#082E79</color>
+    <color name="sev_underweight">#4169E1</color>
+    <color name="underweight">#65B384</color>
+    <color name="normal_weight">#8BC34A</color>
+    <color name="overweight">#FFEB3B</color>
+    <color name="obese_1">#FF9800</color>
+    <color name="obese_2">#CF2929</color>
+    <color name="obese_3">#801818</color>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/historyBmiValTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/history_item_margin"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/historyDateTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/historyHeightTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/history_item_margin"
+        android:text=""
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/historyMassTV"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyBmiValTV" />
+
+    <TextView
+        android:id="@+id/historyMassTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/historyHeightTV"
+        app:layout_constraintEnd_toStartOf="@+id/historyDateTV"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/historyHeightTV" />
+
+    <TextView
+        android:id="@+id/historyDateTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/historyMassTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/historyMassTV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
