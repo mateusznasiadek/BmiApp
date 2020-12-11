@@ -4,8 +4,8 @@ import android.os.Build
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.annotation.RequiresApi
-import com.example.myapp.HISTORY
-import com.example.myapp.history.BmiMeasurement
+import com.example.myapp.database.BmiMeasurement
+import com.example.myapp.database.LocalDateTimeAttributeConverter
 import java.time.LocalDateTime
 
 class BmiForInLb(
@@ -16,8 +16,7 @@ class BmiForInLb(
     constructor(parcel: Parcel) : this(
         parcel.readDouble(),
         parcel.readDouble()
-    ) {
-    }
+    )
 
     override fun count(): Double {
         if (mass < MIN_WEIGHT_LB || mass > MAX_WEIGHT_LB || height < MIN_HEIGHT_IN || height > MAX_HEIGHT_IN) throw IllegalArgumentException()
@@ -25,19 +24,19 @@ class BmiForInLb(
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun save() {
+    override fun toBmiMeasurement() : BmiMeasurement{
         val feet: Int = (height / 12).toInt()
         val inches: Int = (height % 12).toInt()
-        val bmi = BmiMeasurement(
+        val converter = LocalDateTimeAttributeConverter()
+
+        return BmiMeasurement(
+            0L,
             count(),
             "$feet' $inches\"",
             String.format("%.1f", mass) + " lb",
-            LocalDateTime.now()
+            converter.toString(LocalDateTime.now())
         )
 
-        HISTORY.add(0, bmi)
-        if (HISTORY.size > 10)
-            HISTORY = HISTORY.take(10) as ArrayList<BmiMeasurement>
     }
 
     override fun properWeight(): Pair<Double, Double> {

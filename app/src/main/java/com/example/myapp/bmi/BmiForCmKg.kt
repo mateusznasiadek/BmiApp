@@ -4,11 +4,10 @@ import android.os.Build
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.annotation.RequiresApi
-import com.example.myapp.HISTORY
-import com.example.myapp.history.BmiMeasurement
+import com.example.myapp.database.BmiMeasurement
+import com.example.myapp.database.LocalDateTimeAttributeConverter
 import java.time.LocalDateTime
 import kotlin.IllegalArgumentException
-import kotlin.math.min
 
 open class BmiForCmKg(
     private val mass: Double,
@@ -18,8 +17,7 @@ open class BmiForCmKg(
     constructor(parcel: Parcel) : this(
         parcel.readDouble(),
         parcel.readDouble()
-    ) {
-    }
+    )
 
     override fun count(): Double {
         if (mass < MIN_WEIGHT_KG || mass > MAX_WEIGHT_KG || height < MIN_HEIGHT_CM || height > MAX_HEIGHT_CM) throw IllegalArgumentException()
@@ -27,17 +25,16 @@ open class BmiForCmKg(
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun save() {
-        val bmi = BmiMeasurement(
+    override fun toBmiMeasurement(): BmiMeasurement {
+        val converter = LocalDateTimeAttributeConverter()
+
+        return BmiMeasurement(
+            0L,
             count(),
             String.format("%.1f", height) + " cm",
             String.format("%.1f", mass) + " kg",
-            LocalDateTime.now()
+            converter.toString(LocalDateTime.now())
         )
-
-        HISTORY.add(0, bmi)
-        if (HISTORY.size > 10)
-            HISTORY = HISTORY.take(10) as ArrayList<BmiMeasurement>
     }
 
     override fun properWeight(): Pair<Double, Double> {

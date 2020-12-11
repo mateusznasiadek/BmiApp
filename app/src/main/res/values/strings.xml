@@ -15,14 +15,6 @@
     <string name="zero_double">0.00</string>
 
     <string name="bmi_value">BMI:</string>
-    <string name="bmi_info_very_sev_und">You are very severely underweight. You should put on some weight.</string>
-    <string name="bmi_info_sev_und">You are severely underweight. You should put on some weight.</string>
-    <string name="bmi_info_und">You are underweight. You should put on some weight.</string>
-    <string name="bmi_info_normal">Your weight is normal and healthy.</string>
-    <string name="bmi_info_over">You are overweight. You should lose some weight.</string>
-    <string name="bmi_info_ob1">You are obese. You should lose some weight.</string>
-    <string name="bmi_info_ob2">You are severely obese. You should lose some weight.</string>
-    <string name="bmi_info_ob3">You are very severely obese. You should lose some weight.</string>
 
     <string name="proper_weight">Proper weight for your height is between:</string>
 

@@ -9,7 +9,7 @@
         android:enabled="true"
         android:title="@string/amer_units"
         android:visible="true"
-        app:actionLayout="@layout/activity_main" />
+        app:actionLayout="@layout/fragment_count" />
     <item
         android:id="@+id/history"
         android:title="@string/history" />

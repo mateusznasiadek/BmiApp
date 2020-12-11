@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/bmi_count_fragment">
+    <fragment
+        android:id="@+id/bmi_count_fragment"
+        android:name="com.example.myapp.bmicount.BmiCountFragment"
+        android:label="bmi_count_fragment"
+        tools:layout="@layout/fragment_count">
+        <action
+            android:id="@+id/action_bmiCountFragment_to_bmiInfoFragment"
+            app:destination="@id/bmi_info_fragment" />
+        <action
+            android:id="@+id/action_bmiCountFragment_to_historyFragment"
+            app:destination="@id/history_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bmi_info_fragment"
+        android:name="com.example.myapp.info.BmiInfoFragment"
+        android:label="bmi_info_fragment"
+        tools:layout="@layout/fragment_bmi_info">
+        <argument
+            android:name="bmi"
+            app:argType="com.example.myapp.bmi.Bmi" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/history_fragment"
+        android:name="com.example.myapp.history.HistoryFragment"
+        android:label="history_fragment"
+        tools:layout="@layout/fragment_history" />
+</navigation>

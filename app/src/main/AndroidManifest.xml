@@ -17,18 +17,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ActivityBmiInfo"
-            android:label="BMI info"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
-        <activity
-            android:name=".history.HistoryActivity"
-            android:label="History"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
     </application>
 
 </manifest>
